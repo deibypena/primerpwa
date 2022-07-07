@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Web</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- header section starts  -->
+
+    <header id="header" class="header">
+
+        <div id="menu-bar" class="fas fa-bars"></div>
+
+        <a href="/index.html" class="logo"> <img src="/images/logo-yoyis.svg" alt="logo yoyis"></a>
+
+        <nav class="navbar">
+            <a href="#home">Inicio</a>
+            <a href="#woman">Damas</a>
+            <a href="#review">Reseñas</a>
+        </nav>
+
+        <div class="icons">
+            <a href="#" class="fas fa-heart hiden" id="btn-favorite" title="Favoritos"></a><span class="cantidad ct-pedidos hiden">0</span>
+
+            <a href="#" class="fas fa-shopping-cart hiden" id="btn-cart" title="Ir al carrito"></a><span class="cantidad ct-pedidos hiden">0</span>
+
+            <a href="#" class="fas fa-user" id="icon-user" title="Iniciar Sesión"></a>
+
+            <a class="fas fa-shipping-fast hiden" id="icon-pedidos" title="pedidos"></a><span class="cantidad ct-pedidos hiden">0</span>
+
+            <a class="fas fa-sign-in-alt hiden" id="icon-user-logout" title="Cerrar Sesión"></a>
+        </div>
+
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- home section starts  -->
+
+    <section class="home" id="home">
+
+        <div class="slide-container active">
+            <div class="slide">
+                <div class="content">
+                    <h2>Bikini Ondulado</h2>
+                    <p>Bikini "modelo-01" con diseño especial para una mujer unica</p>
+                    <a href="#" class="btn btn-buy nikeMetconRed">Comprar</a>
+                </div>
+                <div class="image">
+                    <img src="images/modelo-1.png" class="shoe" alt="">
+                    <img src="images/home-text-1.svg" class="text" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-container">
+            <div class="slide">
+                <div class="content">
+                    <h2>Camisa basica negra</h2>
+                    <p>camiseta "modelo-01" con diseño especial para una mujer unica</p>
+                    <a href="#" class="btn btn-buy nikeMetconBlue">Comprar</a>
+                </div>
+                <div class="image">
+                    <img src="images/modelo-2.png" class="shoe" alt="">
+                    <img src="images/home-text-2.svg" class="text" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-container">
+            <div class="slide">
+                <div class="content">
+                    <h2>Vestido minnie</h3>
+                        <p>Vestido "modelo-01" con diseño especial para una mujer unica</p>
+                        <a href="#" class="btn btn-buy nikeMetconYellow">Comprar</a>
+                </div>
+                <div class="image">
+                    <img src="images/modelo-3.png" class="shoe" alt="">
+                    <img src="images/home-text-3.svg" class="text" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div id="prev" class="fas fa-chevron-left" onclick="prev()"></div>
+        <div id="next" class="fas fa-chevron-right" onclick="next()"></div>
+
+    </section>
+
+    <div id="login-form-container" class="login-form-container">
+        <form id="login-form">
+            <h3>Iniciar Sesión</h3>
+            <div class="formulario__grupo" id="grupo__correo">
+                <label for="correo" class="formulario__label">Usuario</label>
+                <div class="formulario__grupo-input">
+                    <input type="email" name="correo" id="email" required autocomplete="on" class="formulario__input"
+                        placeholder="tiendaweb@gmail.com">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y
+                    guion bajo.</p>
+            </div>
+            <div class="formulario__grupo" id="grupo__password">
+                <label for="password" class="formulario__label" data-section="login"
+                    data-value="title-contraseña">Contraseña</label>
+                <div class="formulario__grupo-input input-pass">
+                    <input type="password" class="formulario__input passwordInput" name="password" id="password"
+                        placeholder="***********" autocomplete="off" required>
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    <img src="/images/svg/eye-regular.svg" alt="icono ver contraseña" class="icon-eye" id="icon-eye">
+                </div>
+                <p class="formulario__input-error" data-section="login" data-value="text-password-incorrect">La
+                    contraseña tiene que ser de 4 a 12 dígitos.</p>
+            </div>
+
+            <button id="login" class="btn" >Iniciar Sesión</button>
+            <button id="close-btn" class="btn-close">Cerrar</button>
+            <p class="text-account">¿No tienes cuenta?
+            </p><a id="create-account" class="btn-create-account">Creala aqui</a>
+        </form>
+    </div>
+    <div id="singUp-form-container" class="singUp-form-container">
+        <form id="singUp-form-form" class="singUp-form-form">
+            <h3>Crear Cuenta</h3>
+            <div class="formulario__grupo" id="grupo__nombre">
+                <label for="nombre" class="formulario__label">Nombre Completo</label>
+                <div class="formulario__grupo-input">
+                    <input type="text" name="nombre" id="full-name-singUp" required autocomplete="on"
+                        class="formulario__input" placeholder="Ingresa tu Nombre Completo">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">Tu nombre solo puede contener letras y espacios.</p>
+            </div>
+
+            <div class="formulario__grupo" id="grupo__telefono">
+                <label for="telefono" class="formulario__label">Teléfono de Contacto</label>
+                <div class="formulario__grupo-input">
+                    <input type="number" class="formulario__input" name="telefono" id="telefono-singUp"
+                        placeholder="Ingresa un telefono de contacto">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">El telefono es invalido, recuerda que solo puede contener numeros y
+                    son 10 dígitos.</p>
+            </div>
+
+            <div class="formulario__grupo" id="grupo__correo">
+                <label for="correo" class="formulario__label">Correo Electrónico</label>
+                <div class="formulario__grupo-input">
+                    <input type="email" name="correo" id="email-singUp" required autocomplete="on"
+                        class="formulario__input" placeholder="Ingresa un correo electrónico">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y
+                    guion bajo.</p>
+            </div>
+
+            <div class="formulario__grupo" id="grupo__password">
+                <label for="password" class="formulario__label">Contraseña</label>
+                <div class="formulario__grupo-input">
+                    <input type="password" class="formulario__input passwordInput" name="password" id="password-singUp"
+                        placeholder="Ingresa una contraseña" autocomplete="off" required>
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    <img src="/images/svg/eye-regular.svg" alt="icono ver contraseña" class="icon-eye" id="icon-eye">
+                </div>
+                <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+            </div>
+
+            <div class="formulario__grupo" id="grupo__password2">
+                <label for="password2" class="formulario__label">Confirmar Contraseña</label>
+                <div class="formulario__grupo-input">
+                    <input type="password" class="formulario__input passwordInput" name="password2"
+                        id="password-singUp-confirm" placeholder="Repite la contraseña" autocomplete="off" required>
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
+            </div>
+            <div class="formulario__grupo" id="grupo__terminos">
+                <label class="formulario__label">
+                    <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+                    Acepto los Terminos y Condiciones <br>
+                    <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=49981"
+                        target="_blank">Ley 1581 de 2012, por la cual se dictan disposiciones generales para la
+                        protección de datos personales. </a>
+                </label>
+            </div>
+            <div class="formulario__mensaje" id="formulario__mensaje">
+                <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario
+                    correctamente. </p>
+            </div>
+
+            <button id="sing-up" class="btn">Crear</button>
+            <button id="close-singUp-btn" class="btn-close">Cerrar</button>
+        </form>
+    </div>
+
+    
+
+    <!-- home section ends -->
+
+    <!-- service section starts  -->
+
+    <section class="service">
+
+        <div class="box-container">
+
+            <div class="box">
+                <i class="fas fa-shipping-fast"></i>
+                <h3>Pedidos a Colombia</h3>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-undo"></i>
+                <h3>Cambios y Devoluciones Gratis</h3>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-headset"></i>
+                <h3>24 x 7 Soporte</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- service section ends -->
+
+    <!-- products section starts  -->
+
+    <section class="products" id="products">
+
+        <h1 class="heading"> Ultimos <span>Diseños</span> </h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <img src="https://cromantic.vteximg.com.br/arquivos/ids/170264-1000-1200/61562_6-Cepillo-One-Step-Blowout-24K-Gold-Hot-tools.jpg?v=637480458665400000" alt="">
+                <div class="content">
+                    <h3>Cepillo Secador One Step Blowout 24K Gold Hot Tools</h3>
+                    <div class="price">$299.900 <span>$350.900</span></div>
+                    <button class="btn btn-buy">Lo Quiero</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="https://cromantic.vteximg.com.br/arquivos/ids/176568-1000-1200/BNTHB350.jpg?v=637865064217100000" alt="">
+                <div class="content">
+                    <h3>Cepillo Secador Babyliss 3.5 Hot Air</h3>
+                    <div class="price">$279.000 <span>$290.900</span></div>
+                    <button class="btn btn-buy">Lo Quiero</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="https://cromantic.vteximg.com.br/arquivos/ids/171622-1000-1200/REVLON-CEPILLO.jpg?v=637574683684630000" alt="">
+                <div class="content">
+                    <h3>Cepillo Secador Revlon Pro Collection</h3>
+                    <div class="price">$215.000 <span>$250.000</span></div>
+                    <button class="btn btn-buy">Lo Quiero</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="https://cromantic.vteximg.com.br/arquivos/ids/171228-1000-1200/62909-BED-HEAD-BLOW-OUT-FREAK_1.jpg?v=637531881094000000" alt="">
+                <div class="content">
+                    <h3>Cepillo Secador Bed Head Blow Out Freak</h3>
+                    <div class="price">$259.900 <span>$290.900</span></div>
+                    <button class="btn btn-buy">Lo Quiero</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="https://cromantic.vteximg.com.br/arquivos/ids/174439-1000-1200/coldbrush-web-1000x1000.png?v=637739769228100000" alt="">
+                <div class="content">
+                    <h3>Cepillo Babyliss Cold Brush CryoCare Efecto Frio</h3>
+                    <div class="price">$769.000 <span>$790.000</span></div>
+                    <button class="btn btn-buy">Lo Quiero</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="https://cromantic.vteximg.com.br/arquivos/ids/175689-1000-1200/66698-cepillo-secador-babyliss-hot-air-styling-brush.png?v=637813120285670000" alt="">
+                <div class="content">
+                    <h3>Cepillo Secador Babyliss 2.5 Hot Air</h3>
+                    <div class="price">$259.900<span>$279.900</span></div>
+                    <button class="btn btn-buy">Lo Quiero</button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- products section ends -->
+
+
+
+
+    <!-- featured section starts  -->
+
+    <section class="featured" id="featured">
+
+        <h1 class="heading"> Productos <span>Destacados</span> </h1>
+
+        <div class="row">
+            <div class="image-container">
+                <div class="small-image">
+                    <img src="https://cromantic.vteximg.com.br/arquivos/ids/173771-1000-1200/74764053015-1.jpg?v=637708104379770000" class="featured-image-1" alt="">
+                    <img src="https://cromantic.vteximg.com.br/arquivos/ids/173772-1000-1200/74764053015-2.jpg?v=637708104493900000" class="featured-image-1" alt="">
+                    <img src="https://cromantic.vteximg.com.br/arquivos/ids/173773-1000-1200/74764053015-3.jpg?v=637708104616400000" class="featured-image-1" alt="">
+                    <img src="https://cromantic.vteximg.com.br/arquivos/ids/173774-1000-1200/74764053015-4.jpg?v=637708104744630000" class="featured-image-1" alt="">
+                </div>
+                <div class="big-image">
+                    <img src="https://cromantic.vteximg.com.br/arquivos/ids/173771-1000-1200/74764053015-1.jpg?v=637708104379770000" class="big-image-1" alt="">
+                </div>
+            </div>
+            <div class="content">
+                <h3>Pestañina Ardell Wispies 4D Building 10 G</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <p>¡Consigue ese look con ojos luminosos y penetrantes! Si tus pestañas son cortas y poco abundantes, opta por la Pestañina Ardell Wispies 4D Building. Esta pestañina negra brinda volumen y longitud dejando una mirada impactante</p>
+                <div class="price">$39.900 <span>$49.900</span></div>
+                <button class="btn btn-buy" data-id="${doc.id}">Lo Quiero</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="image-container">
+                <div class="small-image">
+                    <img src="https://cromantic.vteximg.com.br/arquivos/ids/167600-1000-1200/53322.jpg?v=637305344898130000" class="featured-image-2" alt="">
+                    <img src="https://cromantic.vteximg.com.br/arquivos/ids/168710-204-204/41554522563-3.png?v=637370230220700000" class="featured-image-2" alt="">
+                    <img src="https://cromantic.vteximg.com.br/arquivos/ids/168709-204-204/41554522563-2.png?v=637370229819900000" class="featured-image-2" alt="">
+                    <img src="https://cromantic.vteximg.com.br/arquivos/ids/168712-1000-1200/41554522563-7.png?v=637370230985670000" class="featured-image-2" alt="">
+                </div>
+                <div class="big-image">
+                    <img src="https://cromantic.vteximg.com.br/arquivos/ids/167600-1000-1200/53322.jpg?v=637305344898130000" class="big-image-2" alt="">
+                </div>
+            </div>
+            <div class="content">
+                <h3>Pestañina Maybelline Total Temptation Very Black Washable</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <p>El cepillo multi-pasada con cerdas suaves permite aplicar capas y capas sin grumos. ¡Tus pestañas pedirán más! Y por su extracto de coco, que le aporta un aroma único y muy especial. Además, aporta suavidad a las pestañas haciendo que se vean flexibles y sin efecto acartonado.</p>
+                <div class="price">$42.900 <span>$54.900</span></div>
+                <button class="btn btn-buy">Lo Quiero</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="image-container">
+                <div class="small-image">
+                    <img src="https://cromantic.vteximg.com.br/arquivos/ids/173978-1000-1200/Pesta%C3%B1ina-the-Balm-Chearter.jpg?v=637716475318870000" class="featured-image-3" alt="">
+                    <img src="https://cromantic.vteximg.com.br/arquivos/ids/161830-1000-1200/1836.jpg?v=636644990776270000" class="featured-image-3" alt="">
+                    <img src="https://cromantic.vteximg.com.br/arquivos/ids/173981-1000-1200/Cheater_Mascara_-_Rimel_de_Pestanas_-_The_Balm_188763e1-dea1-49c7-99b9-f75c15e1bc22_grande.png?v=637716476969800000" class="featured-image-3" alt="">
+                    <img src="https://cromantic.vteximg.com.br/arquivos/ids/173980-1000-1200/Pesta%C3%B1ina-the-Balm-Chearter-3.jpg?v=637716475729570000" class="featured-image-3" alt="">
+                </div>
+                <div class="big-image">
+                    <img src="https://cromantic.vteximg.com.br/arquivos/ids/173978-1000-1200/Pesta%C3%B1ina-the-Balm-Chearter.jpg?v=637716475318870000" class="big-image-3" alt="">
+                </div>
+            </div>
+            <div class="content">
+                <h3>Pestañina The Balm Chearter 5.7 G</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta facilis praesentium odit voluptas
+                    illum iure libero quis fuga commodi. Autem.</p>
+                <div class="price">$35.950 <span>$45.950</span></div>
+                <button class="btn btn-buy">Lo Quiero</button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- featured section ends -->
+
+
+
+    <section class="woman" id="woman">
+
+        <div class="heading">
+            <span>Damas</span>
+        </div>
+
+        <div class="swiper woman-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide">
+                    <div class="image">
+                        <img src="/images/img-damas-1.jpg" alt="">
+                        <span>Accesorios</span>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <div class="image">
+                        <img src="/images/img-damas-2.jpg" alt="">
+                        <span>Camisetas</span>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <div class="image">
+                        <img src="/images/img-damas-3.jpg" alt="">
+                        <span>Camisas y <br> Tops</span>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <div class="image">
+                        <img src="/images/img-damas-4.jpg" alt="">
+                        <span>Vestidos</span>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <div class="image">
+                        <img src="/images/img-damas-5.jpg" alt="">
+                        <span>Faldas y <br> Shorts</span>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <div class="image">
+                        <img src="/images/img-damas-6.jpg" alt="">
+                        <span>Carteras y Bolsos</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+
+        </div>
+
+    </section>
+
+
+    <section class="interesting" id="interesting">
+
+        <div class="image">
+            <img src="/images/modelo-2.png" alt="">
+        </div>
+
+        <div class="content">
+            <h2 class="title">Lorem, ipsum. </h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio at, saepe accusamus dolorum, quos eos
+                nesciunt amet exercitationem illum quis nostrum, repellat quaerat eum debitis fugit alias magnam omnis!
+            </p>
+            <a href="#" class="btn">Leer más</a>
+        </div>
+
+    </section>
+
+
+
+    <!-- review section starts  -->
+
+    <section class="review" id="review">
+
+        <h1 class="heading"> <span>Reseñas</span> </h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <img src="images/pic1.png" alt="">
+                <h3>Pepita</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat, quos eum. Laborum aut a consequatur
+                    ducimus, molestias possimus quisquam rerum temporibus ipsum voluptate accusamus, unde ab asperiores?
+                    Exercitationem, unde rem.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/pic2.png" alt="">
+                <h3>Pepito</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat, quos eum. Laborum aut a consequatur
+                    ducimus, molestias possimus quisquam rerum temporibus ipsum voluptate accusamus, unde ab asperiores?
+                    Exercitationem, unde rem.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/pic3.png" alt="">
+                <h3>Pepito</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat, quos eum. Laborum aut a consequatur
+                    ducimus, molestias possimus quisquam rerum temporibus ipsum voluptate accusamus, unde ab asperiores?
+                    Exercitationem, unde rem.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- review section ends -->
+
+    <!-- newsletter section starts  -->
+
+    <!-- <section class="newsletter">
+
+        <div class="content">
+            <h3>monthly newsletter</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum ullam veniam at itaque culpa hic corporis
+                saepe dicta doloremque nihil.</p>
+            <form action="">
+                <input type="email" placeholder="enter your email" class="box">
+                <input type="submit" value="send" class="btn btn-buy">
+            </form>
+        </div>
+
+    </section> -->
+
+    <!-- newsletter section ends -->
+
+    <!-- footer section  -->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <!-- <div class="box">
+                <h3>our stores</h3>
+                <a href="#">india</a>
+                <a href="#">USA</a>
+                <a href="#">japan</a>
+                <a href="#">paris</a>
+            </div>
+
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="#">home</a>
+                <a href="#">products</a>
+                <a href="#">featured</a>
+                <a href="#">review</a>
+            </div>
+
+            <div class="box">
+                <h3>extra links</h3>
+                <a href="#">my account</a>
+                <a href="#">my favorite</a>
+                <a href="#">my orders</a>
+                <a href="#">newsletter</a>
+            </div>
+
+            <div class="box">
+                <h3>follow us</h3>
+                <a href="#">facebook</a>
+                <a href="#">twitter</a>
+                <a href="#">instagram</a>
+                <a href="#">linkedin</a>
+            </div> -->
+
+            <div class="credit">creado por <span> Deiby Peña </span> | todo los derechos reservados</div>
+
+        </div>
+
+    </section>
+
+    <!-- loader -->
+    <section class="section-loader">
+        <div class="loader">
+            <span style="--i:1;"></span>
+            <span style="--i:2;"></span>
+            <span style="--i:3;"></span>
+            <span style="--i:4;"></span>
+            <span style="--i:5;"></span>
+            <span style="--i:6;"></span>
+            <span style="--i:7;"></span>
+            <span style="--i:8;"></span>
+            <span style="--i:9;"></span>
+            <span style="--i:10;"></span>
+            <span style="--i:11;"></span>
+            <span style="--i:12;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:14;"></span>
+            <span style="--i:15;"></span>
+            <span style="--i:16;"></span>
+            <span style="--i:17;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:19;"></span>
+            <span style="--i:20;"></span>
+        </div>
+    </section>
+
+
+    <script src="/js/validateForm.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+    <script type="module" src="/js/firebase.js"></script>
+    <script type="module" src="/js/carrito-firebase.js"></script>
+    
+
+</body>
+
+</html>

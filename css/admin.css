@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+:root {
+    --black: #000;
+    --orange: #C47806;
+    --dark-color: #219150;
+    --black: #444;
+    --light-color: #666;
+    --border: .1rem solid rgba(0, 0, 0, .1);
+    --border-hover: .1rem solid var(--black);
+    --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    --main-color: #C47806;
+    --mode-dark-primary: #333333;
+    --mode-dark-secondary: #1a1a1a;
+}
+
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 6rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: 1.5rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--orange);
+    border-radius: 5rem;
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+.heading {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 4rem;
+    color: var(--black);
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.heading span {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-family: 'Kaushan Script', cursive;
+    color: var(--orange);
+}
+
+.hiden {
+    display: none
+}
+
+.btn,
+.btn-close {
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: .5rem;
+    border: .2rem solid var(--black);
+    font-weight: 700;
+    font-size: 1.9rem;
+    color: var(--black);
+    cursor: pointer;
+    background: #fff;
+    padding: .8rem 3rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.219);
+}
+
+.btn:hover {
+    transition: all .5s linear;
+    background-color: #c4780681;
+    color: #fff;
+}
+
+.swal2-popup {
+    width: fit-content !important;
+}
+
+.swal2-title {
+    color: var(--orange) !important;
+    font-size: 3.5rem !important;
+    letter-spacing: 1px;
+}
+
+.swal2-confirm {
+    background-color: var(--orange) !important;
+}
+
+.swal2-styled {
+    font-size: 1.5rem !important;
+    font-weight: 600;
+}
+
+.swal2-html-container {
+    font-size: 2rem !important;
+}
+
+h2 {
+    font-family: 'Kaushan Script', cursive;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.603);
+    padding: 0rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 .5rem 1rem #c4780683;
+    transition: all .5s linear;
+}
+
+
+header .logo img {
+    width: 10vh;
+}
+
+header .navbar a {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--black);
+    margin: 0 1rem;
+}
+
+header .navbar a:hover {
+    color: var(--orange);
+}
+
+header .icons a {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #000;
+    margin-left: 1.5rem;
+}
+
+header .icons a:hover {
+    color: var(--orange);
+}
+
+#menu-bar {
+    font-size: 2.5rem;
+    padding: .5rem 1.5rem;
+    border: .1rem solid var(--black);
+    color: var(--black);
+    border-radius: .3rem;
+    cursor: pointer;
+    display: none;
+}

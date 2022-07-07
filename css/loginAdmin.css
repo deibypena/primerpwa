@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+:root {
+    --black: #000;
+    --orange: #C47806;
+    --dark-color: #219150;
+    --black: #444;
+    --light-color: #666;
+    --border: .1rem solid rgba(0, 0, 0, .1);
+    --border-hover: .1rem solid var(--black);
+    --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    --main-color: #C47806;
+    --mode-dark-primary: #333333;
+    --mode-dark-secondary: #1a1a1a;
+}
+
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 6rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: 1.5rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--orange);
+    border-radius: 5rem;
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+.heading {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 4rem;
+    color: var(--black);
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.heading span {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-family: 'Kaushan Script', cursive;
+    color: var(--orange);
+}
+
+.hiden {
+    display: none
+}
+
+.btn,
+.btn-close {
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: .5rem;
+    border: .2rem solid var(--black);
+    font-weight: 700;
+    font-size: 1.9rem;
+    color: var(--black);
+    cursor: pointer;
+    background: #fff;
+    padding: .8rem 3rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.219);
+}
+
+.btn:hover {
+    transition: all .5s linear;
+    background-color: #c4780681;
+    color: #fff;
+}
+
+.swal2-popup {
+    width: fit-content !important;
+}
+
+.swal2-title {
+    color: var(--orange) !important;
+    font-size: 3.5rem !important;
+    letter-spacing: 1px;
+}
+
+.swal2-confirm {
+    background-color: var(--orange) !important;
+}
+
+.swal2-styled {
+    font-size: 1.5rem !important;
+    font-weight: 600;
+}
+
+.swal2-html-container {
+    font-size: 2rem !important;
+}
+
+h2 {
+    font-family: 'Kaushan Script', cursive;
+}
+
+.login-form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, .9);
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.login-form-container form {
+    background: rgb(242, 242, 242);
+    border: 1px solid rgb(186, 186, 186);
+    width: 50rem;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.662);
+}
+
+form h3 {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 3.5rem;
+    color: var(--orange);
+    text-align: center;
+    padding-top: 2rem;
+}
+
+form label {
+    display: block;
+    font-size: 1.9rem;
+    font-weight: 600;
+    padding-top: 1rem;
+}
+
+form .form-btn {
+    font-size: 5rem;
+}
+
+.login-form-container form a {
+    color: var(--orange);
+    cursor: pointer;
+    font-size: 1.9rem;
+    padding-top: 1rem;
+    margin-left: 1rem;
+    font-weight: 600;
+}
+
+.login-form-container form p {
+    font-size: 1.9rem;
+    padding-top: 1rem;
+    font-weight: 600;
+}
+
+.login-form-container form .text-account {
+    display: inline-block;
+}
+
+.input-pass {
+    position: relative;
+}
+
+.icon-eye {
+    position: absolute;
+    height: 40%;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+.icon-eye:hover {
+    opacity: 0.8;
+}
+
+#login {
+    background-color: var(--orange);
+    color: #fff;
+    display: block;
+    margin: 1.5rem auto;
+}
+
+#login:hover {
+    opacity: .7;
+}
+
+
+.formulario__grupo-input {
+    position: relative;
+}
+
+.formulario__input {
+    width: 100%;
+    background: #fff;
+    border: 1px solid var(--black);
+    border-radius: 3px;
+    height: 45px;
+    line-height: 45px;
+    transition: .3s ease all;
+    margin: auto 0;
+    font-size: 1.6rem;
+    border-radius: .5rem;
+    padding: 1rem 1.2rem;
+
+}
+
+.formulario__input:focus {
+    border: 3px solid var(--main-color);
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+
+.formulario__input-error {
+    font-size: 1.7rem;
+    margin-bottom: 0;
+    display: none;
+}
+
+.formulario__input-error-activo {
+    display: block;
+}
+
+.formulario__validacion-estado {
+    display: none;
+    position: absolute;
+    top: 40%;
+    font-size: 1.5rem;
+    right: 2%;
+}
+
+.formulario__checkbox {
+    margin-right: 10px;
+}
+
+.formulario__grupo-terminos,
+.formulario__mensaje,
+.formulario__grupo-btn-enviar {
+    -ms-grid-column-span: 2;
+    grid-column: span 2;
+}
+
+.formulario__mensaje {
+    height: 45px;
+    line-height: 45px;
+    background: #F66060;
+    padding: 0 15px;
+    border-radius: 3px;
+    display: none;
+}
+
+.formulario__mensaje-activo {
+    display: block;
+}
+
+.formulario__mensaje p {
+    margin: 0;
+}
+
+.formulario__grupo-btn-enviar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario__btn {
+    height: 45px;
+    line-height: 45px;
+    width: 30%;
+    background: #000;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .1s ease all;
+}
+
+.formulario__btn:hover {
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 1);
+}
+
+.formulario__mensaje-exito {
+    font-size: 14px;
+    color: #119200;
+    display: none;
+}
+
+.formulario__mensaje-exito-activo {
+    display: block;
+}
+
+.formulario__label a {
+    font-size: 1.5rem;
+}
+
+.formulario__grupo-correcto .formulario__validacion-estado {
+    color: #1ed12d;
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+    color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+    color: #bb2929;
+    display: inline-block;
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+    border: 3px solid #bb2929;
+}

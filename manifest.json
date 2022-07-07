@@ -1,0 +1,18 @@
+{
+    "name": "deiby",
+    "short_name": "deiby",
+    "id": "/",
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#27ae60",
+    "background_color": "#fff",
+    "orientation": "portrait",
+    "scope": "/",
+    "icons": [
+        {
+            "src": "images/png/logo.png",
+            "sizes": "145x145",
+            "type": "image/png"
+        }
+    ]
+}
