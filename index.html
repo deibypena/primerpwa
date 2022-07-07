@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="./manifest.json">
+    <script>
+        if("serviceWorker" in navigator){
+            navigator.serviceWorker.register("sw.js")
+        }
+    </script>
 
 </head>
 
